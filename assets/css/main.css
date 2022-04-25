@@ -1,0 +1,39 @@
+/* cometário: Linha de código que será ignorado*/
+
+/* Organizando o arquivo CSS*/
+
+/* 
+inherit - Herança explicita.
+initial - Força a redefinição de valores.
+unset - Desabilita uma propriedade CSS
+*/
+
+/* Responsive web Design*/
+
+body h1, h2, h3, h4, h5, h6{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #333;
+    color: #e4e4e4;
+}
+
+/*Quando a largura mínim a for de 768px aplique este css*/
+@media(min-width: 768px){
+    /* especificidade CSS. Quanto mais especifico o seletor, mais importante. */
+    html body {
+        background-color: unset;
+        color: initial;
+    }
+
+    body {
+        background: red;
+    }
+}
