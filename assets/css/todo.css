@@ -1,8 +1,58 @@
 @import 'reset.css';
 
+/* 
+um arquivo CSS é divido em blocos.
+
+se começa com um @ é uma diretiva
+
+react sintaxe parecida com HTML JSX className
+
+-seletor com # seleciona id
+-sem nada seleciona a tag (seletor sem tag é seltor impuro)
+
+código limpo é programar dirigido a abstração de maneira simples.
+
+tag pode chamar dois blocos no css, ex: class="text large"
+
+a.link{} => propriedade de linha
+
+######Bloco CSS###
+
+um bloco e composto por uma ou mais declarações;
+
+um declaração CSS é composta de 2 partes: 
+- propriedade: valor;
+
+para dominar CSS é necessário saber quais são suas propriedades e seus valores
+propriedade CSS:
+unidade de medida CSS: px, %, vw, vh, em
+globais: inherit, initial, unset
+    ex: width (propriedade)
+    valores possíveis: all, min-content,
+    valor padrão: auto
+    herança implicita: não
+
+Propriedades mais comuns: width,height,padding,border,margin,font-family,font-size,font-weight,position,
+z-index,overflow,display,flex,flex-direction
+transform, transition,animation, opacity,filter
+text-decoration, list-style
+
+o que é um bloco css? é um conjunto de instruções delimitado por chaves e seletor
+
+o que é propriedade? propriedade é uma forma de especificar ou formatar algum recurso no css.
+
+*/
+
 .menu, .container, .details {
-    border: var(--border);
     height: 100vh;
+}
+
+.menu {
+    background-color: #F2F2F2;
+}
+
+.details {
+    border: var(--border);
 }
 
 .menu {
@@ -102,4 +152,78 @@ header.menu__header__profile > div {
 
 
 
-/* fim menu - header*/
+/*-------------------- fim menu - header--------------------*/
+
+
+/*-------------------- main - .container --------------------*/
+
+.container {
+    width: 100%;
+    height: inherit;
+    flex-direction: column;
+    background: url('../images/bg-phone.jpg') center no-repeat;
+    background-size: cover;
+}
+
+.container > header,
+.container > footer {
+    height:133px;
+    border: solid 1px red;
+}
+
+.container > section.tasks {
+    height: calc(100vh - (133px * 2))
+}
+
+.container > header {
+    width: 100%;
+    flex-direction: column;
+    color:#fff;
+    text-shadow: 0 0 2px #333;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.container > header > div:first-child {
+    margin-top: 2%;
+    justify-content: space-between;
+}
+
+.tasks {
+    flex-direction: column;
+}
+
+.task {
+    width:90%;
+    height: 40px;
+    margin: 0.5% 5%;
+    height: 80px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    background: rgba(240,240,240,0.8);
+    border-radius: 5px;
+}
+
+.task:hover {
+    background: rgb(240,240,240);
+    cursor:pointer;
+}
+
+/* tablet */
+@media (min-width:768px){
+    .container {
+        background: url('../images/bg-tablet.jpg') center no-repeat;
+        background-size: cover;
+    }
+}
+
+/* desktop */
+@media (min-width: 1280px) {
+    .container{
+        background: url('../images/bg-desktop.jpg') center no-repeat;
+        background-size: cover;
+    }
+}
+
+/*--------------------fim main - .container--------------------*/
